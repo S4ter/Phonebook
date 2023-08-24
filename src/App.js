@@ -1,9 +1,10 @@
 import React from 'react';
-import { ContactsList } from './components/ContactsList/ContactsList.js';
-import { PhonebookForm } from './components/PhonebookForm/PhonebookForm.js';
+import { ContactsList } from './components/contacts/ContactsList/ContactsList.js';
+import { PhonebookForm } from './components/contacts/PhonebookForm/PhonebookForm.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/actions.js';
+import { fetchContacts } from 'redux/contacts/actions.js';
+import { RegisterForm } from 'components/authComps/Register/RegisterForm.js';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ export const App = () => {
       {error && <p>{error}</p>}
       <PhonebookForm />
       <ContactsList />
+      <RegisterForm />
     </div>
   );
 };
