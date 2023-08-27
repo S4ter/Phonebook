@@ -1,10 +1,5 @@
+import { RegisterForm } from 'components/authComps/Register/RegisterForm';
+
 export const RegisterPage = () => {
-  return (
-    <div>
-      <h1>REGISTER PAGE</h1>
-      <div>
-        <input></input>
-      </div>
-    </div>
-  );
+  return <RegisterForm />;
 };

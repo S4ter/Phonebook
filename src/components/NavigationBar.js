@@ -1,12 +1,16 @@
 import { NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { logOutUser } from 'redux/auth/actions';
 
 export const NavigationBar = () => {
   const dispatch = useDispatch();
 
-  //   const handleLogout = () => {
-  //     dispatch(logOut());
-  //   };
+  const handleLogout = () => {
+    dispatch(logOutUser());
+  };
+  const user = useSelector(state => {
+    return state.auth.user;
+  });
   return (
     <header>
       <nav style={{ display: 'flex', gap: '4px' }}>
@@ -14,8 +18,11 @@ export const NavigationBar = () => {
         <NavLink to="/contacts">Contacts</NavLink>
         <NavLink to="/login">Login</NavLink>
         <NavLink to="/register">Register</NavLink>
-        <button onClick={() => {}}>Log out</button>
       </nav>
+      <div>
+        <p>user: {user.email}</p>
+        <button onClick={handleLogout}>Log out</button>
+      </div>
     </header>
   );
 };
