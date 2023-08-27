@@ -10,12 +10,14 @@ import { Homepage } from 'pages/Homepage.js';
 import { RegisterPage } from 'pages/RegisterPage.js';
 import { LoginPage } from 'pages/LoginPage.js';
 import { ContactsPage } from 'pages/ContactsPage.js';
+import { fetchContacts } from 'redux/contacts/actions';
 
 export const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(refreshUser());
+    dispatch(fetchContacts());
   }, [dispatch]);
   return (
     <Suspense fallback={<div>Loading page...</div>}>
