@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import './ContactsList.styles.css';
 import { Contact } from 'components/contacts/Contact/Contact';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 export const ContactsList = () => {
-  const dispatch = useDispatch();
   const contacts = useSelector(state => {
     return state.contacts.items;
   });
