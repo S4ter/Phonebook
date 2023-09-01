@@ -1,0 +1,11 @@
+.container {
+  min-height: 600px;
+  height: 100%;
+  width: 900px;
+  border: 6px solid #778da9;
+  border-radius: 65px;
+  margin: 20px auto;
+  background-color: #415a77;
+  font-family: Jost;
+  text-decoration: none;
+}

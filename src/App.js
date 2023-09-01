@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 import { refreshUser } from 'redux/auth/actions.js';
 import { Route, Routes } from 'react-router-dom';
-import { Layout } from 'components/Layout.js';
+import { Layout } from 'components/Layout/Layout';
 import { Homepage } from 'pages/Homepage.js';
 import { RegisterPage } from 'pages/RegisterPage.js';
 import { LoginPage } from 'pages/LoginPage.js';

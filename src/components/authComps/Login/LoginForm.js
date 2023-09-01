@@ -1,6 +1,6 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logInUser } from 'redux/auth/actions';
-
+import './LoginForm.styles.css';
 export const LoginForm = () => {
   const dispatch = useDispatch();
 
@@ -18,27 +18,39 @@ export const LoginForm = () => {
     );
     form.reset();
   };
+  const user = useSelector(state => {
+    return state.auth.user;
+  });
 
-  return (
-    <form
-      onSubmit={handleSubmit}
-      autoComplete="off"
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '10px',
-        alignItems: 'center',
-      }}
-    >
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Log in</button>
-    </form>
-  );
+  if (user.name !== null) {
+    return <div className="notlogged_info">You are already logged in.</div>;
+  } else {
+    return (
+      <form
+        onSubmit={handleSubmit}
+        autoComplete="off"
+        className="login_container"
+      >
+        <label>
+          <input
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            className="login_input"
+          />
+        </label>
+        <label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            className="login_input"
+          />
+        </label>
+        <button type="submit" className="login_button">
+          Log in
+        </button>
+      </form>
+    );
+  }
 };

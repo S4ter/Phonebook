@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from 'redux/auth/actions';
 
 export const RegisterForm = () => {
@@ -20,31 +20,47 @@ export const RegisterForm = () => {
     );
     form.reset();
   };
+  const user = useSelector(state => {
+    return state.auth.user;
+  });
 
-  return (
-    <form
-      onSubmit={handleSubmit}
-      autoComplete="off"
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '10px',
-        alignItems: 'center',
-      }}
-    >
-      <label>
-        Username
-        <input type="text" name="name" />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Register</button>
-    </form>
-  );
+  if (user.name !== null) {
+    return <div className="notlogged_info">You are already logged in.</div>;
+  } else {
+    return (
+      <form
+        onSubmit={handleSubmit}
+        autoComplete="off"
+        className="login_container"
+      >
+        <label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Username"
+            className="login_input"
+          />
+        </label>
+        <label>
+          <input
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            className="login_input"
+          />
+        </label>
+        <label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            className="login_input"
+          />
+        </label>
+        <button type="submit" className="login_button">
+          Register
+        </button>
+      </form>
+    );
+  }
 };

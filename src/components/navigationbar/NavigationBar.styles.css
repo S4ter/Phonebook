@@ -1,0 +1,37 @@
+.layout_header {
+  border-bottom: 6px solid #778da9;
+  margin: auto;
+  text-align: center;
+  padding: 24px;
+  color: #e0e1dd;
+  text-align: center;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 158.687%;
+  letter-spacing: 2.4px;
+}
+.nav_containter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin: 5px 40px 0 40px;
+  color: #e0e1dd;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 158.687%; /* 38.085px */
+  letter-spacing: 1.44px;
+}
+.nav_menu {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  text-decoration: inherit;
+}
+.nav_menu a.active {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}

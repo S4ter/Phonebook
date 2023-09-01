@@ -3,7 +3,7 @@ import { PhonebookForm } from 'components/contacts/PhonebookForm/PhonebookForm';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/actions';
-
+import './ContactsPage.styles.css';
 export const ContactsPage = () => {
   const dispatch = useDispatch();
 
@@ -13,9 +13,9 @@ export const ContactsPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="contactspage_container">
+      <ContactsList />
       <PhonebookForm />
-      <ContactsList />;
     </div>
   );
 };
