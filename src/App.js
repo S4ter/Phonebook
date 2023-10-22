@@ -28,15 +28,6 @@ export const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/contacts" element={<ContactsPage />} />
         </Route>
-
-        {/* <div>
-          <h1>Phonebook</h1>
-          {isLoading && !error && <p>Loading...</p>}
-          {error && <p>{error}</p>}
-          <PhonebookForm />
-          <ContactsList />
-          <RegisterForm />
-        </div> */}
       </Routes>
     </Suspense>
   );
