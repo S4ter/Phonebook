@@ -12,7 +12,7 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <BrowserRouter basename="Phonebook">
+    <BrowserRouter basename="/Phonebook">
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <App />
